@@ -1,0 +1,14 @@
+.mainPageContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+
+  .routerContainer {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background-color: lightcoral;
+  }
+}
