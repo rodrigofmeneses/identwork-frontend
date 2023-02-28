@@ -1,7 +1,7 @@
-import style from './App.module.scss'
-import { Navbar } from './components/Navbar/Navbar'
-import { Sidebar } from './components/Sidebar/Sidebar'
-import { Table } from './components/Table/Table'
+import { Navbar } from '../components/Navbar/Navbar'
+import { Sidebar } from '../components/Sidebar/Sidebar'
+import { Table } from '../components/Table/Table'
+import style from './styles/Home.module.scss'
 
 function App() {
   return (

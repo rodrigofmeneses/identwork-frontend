@@ -7,9 +7,9 @@ interface Props {
 
 export const Navbar = (props: Props) => {
   return (
-    <div className={style.navbarContainer}>
+    <nav className={style.navbarContainer}>
       <h1>{props.title}</h1>
       <Button>Maravilhosa</Button>
-    </div>
+    </nav>
   )
 }

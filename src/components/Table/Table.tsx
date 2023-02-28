@@ -1,4 +1,5 @@
 import { Button } from '../Button/Button'
+import style from './Table.module.scss'
 
 interface Props {
   title?: string
@@ -18,10 +19,15 @@ export const Table = (props: Props) => {
     },
   ]
   return (
-    <div>
-      <header>
-        <input type="text" placeholder="Search" required />
-        <Button>Add Employee</Button>
+    <div className={style.mainContainer}>
+      <header className={style.headerContainer}>
+        <div>
+          <input type="text" placeholder="Search" required />
+          <Button>Search</Button>
+        </div>
+        <div>
+          <Button>Add Employee</Button>
+        </div>
       </header>
       <div>
         <table>
