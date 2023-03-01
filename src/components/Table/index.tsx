@@ -20,8 +20,8 @@ export const Table = (props: Props) => {
   return (
     <div className={style.mainContainer}>
       <div>
-        <header>{props.title}</header>
         <table>
+          <thead>{props.title}</thead>
           <tr>
             <th>ID</th>
             <th>Name</th>

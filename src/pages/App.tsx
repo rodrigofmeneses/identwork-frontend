@@ -6,11 +6,15 @@ import style from './styles/App.module.scss'
 
 function App() {
   return (
-    <main className={style.mainPageContainer}>
+    <main className={style.mainPage}>
       <Header />
-      <div className={style.routerContainer}>
-        <Sidebar />
-        <RouterProvider router={router} />
+      <div className={style.content}>
+        <div className={style.sidebar}>
+          <Sidebar />
+        </div>
+        <div className={style.router}>
+          <RouterProvider router={router} />
+        </div>
       </div>
     </main>
   )

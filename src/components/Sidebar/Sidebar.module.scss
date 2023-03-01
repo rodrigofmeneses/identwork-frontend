@@ -1,5 +1,10 @@
 .sidebarContainer {
   display: flex;
   flex-direction: column;
-  background-color: lightgray;
+  border-right: 2px solid #ccc;
+
+  a {
+    font-size: 100%;
+    padding: 10px;
+  }
 }

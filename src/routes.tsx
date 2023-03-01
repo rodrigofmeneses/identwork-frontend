@@ -7,7 +7,7 @@ export const router = createBrowserRouter([
     element: <div>Home Page</div>,
   },
   {
-    path: '/employee',
+    path: '/employees',
     element: <Employees />,
   },
 ])

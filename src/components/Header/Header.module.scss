@@ -2,9 +2,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  background-color: lightblue;
+  // background-color: lightblue;
+  align-items: baseline;
+  padding: 30px;
+  border-bottom: 1px solid black;
 
-  h1 {
-    font-family: 'Times New Roman';
+  header {
+    font-family: 'Helvetica';
+    font-size: 25px;
   }
 }
