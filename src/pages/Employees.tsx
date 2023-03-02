@@ -6,8 +6,11 @@ export const Employees = () => {
     <div className={style.employeesContainer}>
       <div className={style.topContainer}>
         <div>
-          <input type="text" placeholder="Search" required />
-          <button>Search</button>
+          <div className={style.wrapper}>
+            <i className="fa fa-search"></i>
+            <input type="text" placeholder="Search" required />
+            <button>Search</button>
+          </div>
         </div>
         <div>
           <button>Add Employee</button>
