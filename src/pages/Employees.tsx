@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import { Button } from '../components/Button'
 import { Table } from '../components/Table'
 import style from './styles/Employees.module.scss'
 import routerStyle from './styles/Router.module.scss'
@@ -13,18 +14,19 @@ export const Employees = () => {
           <div className={style.wrapper}>
             <i className="fa fa-search"></i>
             <input type="text" placeholder="Search" required />
-            <button>Search</button>
+            <Button>Search</Button>
           </div>
         </div>
         <div>
-          <button onClick={() => navigate('/add-employee')}>
+          <Button onClick={() => navigate('/add-employee')}>
             Add Employee
-          </button>
+          </Button>
         </div>
       </div>
       <div className={style.tableContainer}>
         <Table title="Employees"></Table>
       </div>
+      <Button>Olá</Button>
     </div>
   )
 }
