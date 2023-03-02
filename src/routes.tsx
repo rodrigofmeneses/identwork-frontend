@@ -1,4 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
+import { AddEmployee } from './pages/AddEmployee'
 import { Employees } from './pages/Employees'
 
 export const router = createBrowserRouter([
@@ -9,5 +10,9 @@ export const router = createBrowserRouter([
   {
     path: '/employees',
     element: <Employees />,
+  },
+  {
+    path: '/add-employee',
+    element: <AddEmployee />,
   },
 ])

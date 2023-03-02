@@ -1,9 +1,13 @@
+import { useNavigate } from 'react-router-dom'
 import { Table } from '../components/Table'
 import style from './styles/Employees.module.scss'
+import routerStyle from './styles/Router.module.scss'
 
 export const Employees = () => {
+  const navigate = useNavigate()
+
   return (
-    <div className={style.employeesContainer}>
+    <div className={routerStyle.routerContainer}>
       <div className={style.topContainer}>
         <div>
           <div className={style.wrapper}>
@@ -13,7 +17,9 @@ export const Employees = () => {
           </div>
         </div>
         <div>
-          <button>Add Employee</button>
+          <button onClick={() => navigate('/add-employee')}>
+            Add Employee
+          </button>
         </div>
       </div>
       <div className={style.tableContainer}>
