@@ -1,4 +1,5 @@
 import { Pencil, Trash } from 'phosphor-react'
+import Checkbox from '../Checkbox'
 import style from './Table.module.scss'
 
 interface TableProps {
@@ -25,18 +26,24 @@ export default function Table(props: TableProps) {
       <header>{props.title}</header>
       <table>
         <tr>
+          <Checkbox />
           {header.map(item => (
             <th>{item}</th>
           ))}
         </tr>
         {employees.map(employee => (
           <tr>
+            <Checkbox />
             <td>{employee.id}</td>
             <td>{employee.name}</td>
             <td>{employee.company}</td>
-            <td>
-              <Pencil size={20} style={{ cursor: 'pointer' }} />
-              <Trash size={20} style={{ cursor: 'pointer' }} />
+            <td className={style.actions}>
+              <Pencil size={24} style={{ cursor: 'pointer' }} />
+              <Trash
+                size={24}
+                className={style.trash}
+                style={{ cursor: 'pointer' }}
+              />
             </td>
           </tr>
         ))}

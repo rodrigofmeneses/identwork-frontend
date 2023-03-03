@@ -25,7 +25,14 @@ export default function AddEmployee() {
         {errors.exampleRequired && <span>This field is required</span>}
         <div className={style.itemContainer}>
           <label>Company</label>
-          <input {...register('company', { required: true })} />
+          <select
+            style={{ width: '80%', height: '50px' }}
+            {...register('company', { required: true })}
+            placeholder="aew"
+          >
+            <option value="fabricio">Fabriciao</option>
+            <option value="aew">AEWW</option>
+          </select>
         </div>
         {errors.exampleRequired && <span>This field is required</span>}
         <Button type="submit">Enviar</Button>
