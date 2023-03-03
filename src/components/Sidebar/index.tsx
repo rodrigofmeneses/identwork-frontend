@@ -7,7 +7,7 @@ export default function Sidebar() {
       <a href="/employees">
         <IdentificationCard size={40} />
       </a>
-      <a href="/">
+      <a href="/companies">
         <Buildings size={40} />
       </a>
     </div>

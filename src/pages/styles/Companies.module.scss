@@ -1,0 +1,42 @@
+.topContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 45px 24px 8px;
+
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    position: relative;
+
+    i {
+      position: absolute;
+      padding: 4px;
+      left: 5px;
+      bottom: 10px;
+    }
+
+    input {
+      padding: 10px 30px;
+      max-width: 250px;
+      border-radius: 4px;
+      border: 0px;
+    }
+  }
+
+  Button {
+    min-width: 100px;
+  }
+}
+
+.tableContainer {
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+  margin: 8px 24px 60px;
+
+  border-radius: 4px;
+  background-color: white;
+}
