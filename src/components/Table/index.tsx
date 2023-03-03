@@ -1,42 +1,34 @@
 import { Pencil, Trash } from 'phosphor-react'
 import Checkbox from '../Checkbox'
 import style from './Table.module.scss'
+import { IEmployee } from '../../types/employee'
+import { ICompany } from '../../types/company'
 
-interface TableProps {
+interface TableProps<T> {
   title: string
+  checkbox?: boolean
+  edit?: boolean
+  header: string[]
+  content: T[]
 }
 
-export default function Table(props: TableProps) {
-  const header = ['ID', 'Name', 'Company', 'Actions']
-
-  const employees = [
-    {
-      id: 123456,
-      name: 'Marta linda',
-      company: 'Maré',
-    },
-    {
-      id: 654321,
-      name: 'Rodrigo linda',
-      company: 'Maré',
-    },
-  ]
+export default function Table(props: TableProps<IEmployee | ICompany>) {
   return (
     <div className={style.mainContainer}>
       <header>{props.title}</header>
       <table>
         <tr>
-          <Checkbox />
-          {header.map(item => (
+          {props.checkbox && <Checkbox />}
+          {props.header.map(item => (
             <th>{item}</th>
           ))}
         </tr>
-        {employees.map(employee => (
+        {props.content.map(item => (
           <tr>
-            <Checkbox />
-            <td>{employee.id}</td>
-            <td>{employee.name}</td>
-            <td>{employee.company}</td>
+            {props.checkbox && <Checkbox />}
+            {Object.values(item).map(value => (
+              <td>{value}</td>
+            ))}
             <td className={style.actions}>
               <Pencil size={24} style={{ cursor: 'pointer' }} />
               <Trash

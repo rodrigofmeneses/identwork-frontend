@@ -23,9 +23,17 @@
       max-height: 35px;
     }
 
+    tr {
+      th:last-child {
+        display: flex;
+        justify-content: flex-end;
+        // background-color: #88898b;
+      }
+    }
+
     .actions {
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
       gap: 15px;
     }
   }
