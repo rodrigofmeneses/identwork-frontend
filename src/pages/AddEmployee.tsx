@@ -14,27 +14,28 @@ export default function AddEmployee() {
   return (
     <div className={routerStyle.routerContainer}>
       <form onSubmit={handleSubmit(onSubmit)} className={style.form}>
+        <h1>Add Employee</h1>
         <div className={style.itemContainer}>
           <label>ID</label>
           <input {...register('id', { required: true })} />
         </div>
+        {errors.id && <span>This field is required</span>}
         <div className={style.itemContainer}>
           <label>Name</label>
           <input {...register('name', { required: true })} />
         </div>
-        {errors.exampleRequired && <span>This field is required</span>}
+        {errors.name && <span>This field is required</span>}
         <div className={style.itemContainer}>
           <label>Company</label>
           <select
-            style={{ width: '80%', height: '50px' }}
             {...register('company', { required: true })}
             placeholder="aew"
           >
             <option value="fabricio">Fabriciao</option>
             <option value="aew">AEWW</option>
           </select>
+          {errors.company && <span>This field is required</span>}
         </div>
-        {errors.exampleRequired && <span>This field is required</span>}
         <Button type="submit">Enviar</Button>
       </form>
     </div>

@@ -1,5 +1,5 @@
 import { createBrowserRouter } from 'react-router-dom'
-import { AddEmployee, Companies, Employees } from './pages'
+import { AddCompany, AddEmployee, Companies, Employees } from './pages'
 
 export const router = createBrowserRouter([
   {
@@ -13,5 +13,9 @@ export const router = createBrowserRouter([
   {
     path: '/companies',
     element: <Companies />,
+  },
+  {
+    path: '/add-company',
+    element: <AddCompany />,
   },
 ])
