@@ -1,6 +1,6 @@
 import style from './Header.module.scss'
 
-export const Header = () => {
+export default function Header() {
   return (
     <div className={style.navbarContainer}>
       <header>IDENTWORK</header>

@@ -6,7 +6,7 @@ interface ButtonProps {
   children?: React.ReactNode
 }
 
-export const Button = (props: ButtonProps) => {
+export default function Button(props: ButtonProps) {
   return (
     <button
       onClick={props.onClick}

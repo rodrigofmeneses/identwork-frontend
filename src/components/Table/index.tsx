@@ -1,11 +1,12 @@
+import { Pencil, Trash } from 'phosphor-react'
 import style from './Table.module.scss'
 
-interface Props {
+interface TableProps {
   title: string
 }
 
-export const Table = (props: Props) => {
-  const header = ['ID', 'Name', 'Company']
+export default function Table(props: TableProps) {
+  const header = ['ID', 'Name', 'Company', 'Actions']
 
   const employees = [
     {
@@ -33,6 +34,10 @@ export const Table = (props: Props) => {
             <td>{employee.id}</td>
             <td>{employee.name}</td>
             <td>{employee.company}</td>
+            <td>
+              <Pencil size={20} style={{ cursor: 'pointer' }} />
+              <Trash size={20} style={{ cursor: 'pointer' }} />
+            </td>
           </tr>
         ))}
       </table>

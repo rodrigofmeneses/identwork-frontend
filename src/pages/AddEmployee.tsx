@@ -1,9 +1,9 @@
 import { useForm } from 'react-hook-form'
-import { Button } from '../components/Button'
+import { Button } from '../components'
 import style from './styles/AddEmployee.module.scss'
 import routerStyle from './styles/Router.module.scss'
 
-export const AddEmployee = () => {
+export default function AddEmployee() {
   const {
     register,
     handleSubmit,
@@ -25,7 +25,7 @@ export const AddEmployee = () => {
         {errors.exampleRequired && <span>This field is required</span>}
         <div className={style.itemContainer}>
           <label>Company</label>
-          <input {...register('name', { required: true })} />
+          <input {...register('company', { required: true })} />
         </div>
         {errors.exampleRequired && <span>This field is required</span>}
         <Button type="submit">Enviar</Button>

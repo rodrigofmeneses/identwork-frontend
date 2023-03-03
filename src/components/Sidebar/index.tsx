@@ -1,11 +1,7 @@
 import { Buildings, IdentificationCard } from 'phosphor-react'
 import style from './Sidebar.module.scss'
 
-interface Props {
-  title?: string
-}
-
-export const Sidebar = (props: Props) => {
+export default function Sidebar() {
   return (
     <div className={style.sidebarContainer}>
       <a href="/employees">

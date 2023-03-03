@@ -1,6 +1,5 @@
 import { RouterProvider } from 'react-router-dom'
-import { Header } from '../components/Header/index'
-import { Sidebar } from '../components/Sidebar/index'
+import { Header, Sidebar } from '../components'
 import { router } from '../routes'
 import style from './styles/App.module.scss'
 

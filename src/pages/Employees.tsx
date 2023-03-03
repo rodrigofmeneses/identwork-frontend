@@ -1,10 +1,9 @@
 import { useNavigate } from 'react-router-dom'
-import { Button } from '../components/Button'
-import { Table } from '../components/Table'
+import { Button, Table } from '../components'
 import style from './styles/Employees.module.scss'
 import routerStyle from './styles/Router.module.scss'
 
-export const Employees = () => {
+export default function Employees() {
   const navigate = useNavigate()
 
   return (
@@ -26,7 +25,6 @@ export const Employees = () => {
       <div className={style.tableContainer}>
         <Table title="Employees"></Table>
       </div>
-      <Button>Olá</Button>
     </div>
   )
 }
