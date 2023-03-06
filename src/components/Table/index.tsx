@@ -7,7 +7,6 @@ import { ICompany } from '../../types/company'
 interface TableProps<T> {
   title: string
   checkbox?: boolean
-  edit?: boolean
   header: string[]
   content: T[]
 }
@@ -17,28 +16,30 @@ export default function Table(props: TableProps<IEmployee | ICompany>) {
     <div className={style.mainContainer}>
       <header>{props.title}</header>
       <table>
-        <tr>
-          {props.checkbox && <Checkbox />}
-          {props.header.map(item => (
-            <th>{item}</th>
-          ))}
-        </tr>
-        {props.content.map(item => (
+        <tbody>
           <tr>
             {props.checkbox && <Checkbox />}
-            {Object.values(item).map(value => (
-              <td>{value}</td>
+            {props.header.map(item => (
+              <th key={item}>{item}</th>
             ))}
-            <td className={style.actions}>
-              <Pencil size={24} style={{ cursor: 'pointer' }} />
-              <Trash
-                size={24}
-                className={style.trash}
-                style={{ cursor: 'pointer' }}
-              />
-            </td>
           </tr>
-        ))}
+          {props.content.map(item => (
+            <tr key={item.id}>
+              {props.checkbox && <Checkbox />}
+              {Object.values(item).map((value, index) => (
+                <td key={index}>{value}</td>
+              ))}
+              <td className={style.actions}>
+                <Pencil size={24} style={{ cursor: 'pointer' }} />
+                <Trash
+                  size={24}
+                  className={style.trash}
+                  style={{ cursor: 'pointer' }}
+                />
+              </td>
+            </tr>
+          ))}
+        </tbody>
       </table>
       <footer>
         <div className={style.pagination}>

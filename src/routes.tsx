@@ -3,6 +3,10 @@ import { AddCompany, AddEmployee, Companies, Employees } from './pages'
 
 export const router = createBrowserRouter([
   {
+    path: '/',
+    element: <h1>IdentWork</h1>,
+  },
+  {
     path: '/employees',
     element: <Employees />,
   },
