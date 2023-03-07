@@ -1,16 +1,35 @@
-import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { Button, Table } from '../components'
+import { ICompany } from '../types/company'
 import style from './styles/Companies.module.scss'
 import routerStyle from './styles/Router.module.scss'
-import { ICompany } from '../types/company'
-import axios from 'axios'
 
 export default function Companies() {
   const navigate = useNavigate()
 
   const [header, setHeader] = useState(['ID', 'Name', 'Actions'])
   const [companies, setCompanies] = useState<ICompany[]>([])
+  const [selected, setSelected] = useState<ICompany>()
+
+  const selectCompany = (selectedCompany: ICompany) => {
+    setSelected(selectedCompany)
+    setCompanies(prevCompanies =>
+      prevCompanies.map(company => ({
+        ...company,
+        selected: selectedCompany.id === company.id,
+      }))
+    )
+  }
+
+  const deleteCompany = async (id: string) => {
+    try {
+      await axios.delete(`http://localhost:7777/companies/${id}`)
+    } catch (e) {
+      console.log(e)
+    }
+  }
 
   useEffect(() => {
     axios({
@@ -43,9 +62,10 @@ export default function Companies() {
       <div className={style.tableContainer}>
         <Table
           title="Companies"
-          checkbox={false}
           header={header}
           content={companies}
+          checkbox={false}
+          onDelete={deleteCompany}
         ></Table>
       </div>
     </div>

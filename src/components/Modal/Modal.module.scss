@@ -24,9 +24,18 @@
     h1 {
       text-align: center;
     }
+    .buttons {
+      button {
+        min-width: 150px;
+      }
 
-    button {
-      min-width: 300px;
+      button:first-child {
+        background-color: lightcoral;
+      }
+
+      button:first-child:hover {
+        background-color: #ff0000;
+      }
     }
   }
 }

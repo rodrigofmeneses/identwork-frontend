@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Button, Table } from '../components'
+import { IEmployee } from '../types/employee'
 import style from './styles/Employees.module.scss'
 import routerStyle from './styles/Router.module.scss'
 
@@ -8,16 +9,16 @@ export default function Employees() {
   const navigate = useNavigate()
 
   const [header, setHeader] = useState(['ID', 'Name', 'Company', 'Actions'])
-  const [employees, setEmployees] = useState([
+  const [employees, setEmployees] = useState<IEmployee[]>([
     {
-      id: 123456,
+      id: '123456',
       name: 'Marta linda',
       company: 'Maré',
     },
     {
-      id: 654321,
+      id: '654321',
       name: 'Rodrigo linda',
-      company: 'Maré',
+      company: 'abc',
     },
   ])
 
@@ -40,10 +41,10 @@ export default function Employees() {
       <div className={style.tableContainer}>
         <Table
           title="Employees"
-          checkbox={true}
-          edit={true}
+          // checkbox={true}
           header={header}
           content={employees}
+          onDelete={async id => {}}
         ></Table>
       </div>
     </div>
